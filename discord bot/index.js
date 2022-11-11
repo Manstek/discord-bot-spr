@@ -1,11 +1,13 @@
-require("dotenv").config(); //to start process from .env file
 const {Client, Intents}=require("discord.js");
+const { token } = require('./config.json');
+
 const client=new Client({
     Intents:[
         Intents.FLAGS.GUILDS,//adds server functionality
         Intents.FLAGS.GUILD_MESSAGES //gets messages from our bot.
     ]
 });
+
 client.once("ready", () =>{
     console.log(client.user.username + " is ONLINE"); //message when bot is online
 })
@@ -18,4 +20,4 @@ function (messages){
     }
 })
 
-client.login(process.env.TOKEN);
+client.login(token);
