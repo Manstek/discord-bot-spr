@@ -7,7 +7,7 @@ const client=new Client({
     ]
 });
 client.once("ready", () =>{
-    console.log("BOT IS ONLINE"); //message when bot is online
+    console.log(client.user.username + " is ONLINE"); //message when bot is online
 })
 
 
